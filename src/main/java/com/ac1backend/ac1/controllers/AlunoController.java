@@ -25,8 +25,12 @@ public class AlunoController {
     }
 
     @PostMapping("/vincular-aluno-curso")
-    public ResponseEntity<Aluno> vincularAlunoCurso(@RequestBody AlunoCursoRequest alunoCursoRequest) {
-        Aluno alunoVinculado = alunoService.vincularCurso(alunoCursoRequest.alunoId(), alunoCursoRequest.cursoId());
-        return ResponseEntity.ok(alunoVinculado);
+    public ResponseEntity<?> vincularAlunoCurso(@RequestBody AlunoCursoRequest alunoCursoRequest) {
+        try {
+            Aluno alunoVinculado = alunoService.vincularCurso(alunoCursoRequest.alunoId(), alunoCursoRequest.cursoId());
+            return ResponseEntity.ok(alunoVinculado);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }
