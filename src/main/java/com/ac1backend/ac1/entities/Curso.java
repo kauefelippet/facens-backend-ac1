@@ -1,6 +1,6 @@
 package com.ac1backend.ac1.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,6 +18,6 @@ public class Curso {
     @Column(nullable = false, length = 100)
     private String nome;
     @OneToMany(mappedBy = "idCurso")
-    @JsonIgnore
+    @JsonManagedReference
     private List<Aluno> alunos;
 }

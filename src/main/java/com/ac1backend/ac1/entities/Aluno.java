@@ -1,5 +1,6 @@
 package com.ac1backend.ac1.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,5 +19,6 @@ public class Aluno {
     private int anoIngresso;
     @ManyToOne
     @JoinColumn(name = "curso_id")
+    @JsonBackReference
     private Curso idCurso;
 }
