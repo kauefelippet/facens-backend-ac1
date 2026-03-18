@@ -2,10 +2,14 @@
 
 ## 📸 Evidências das Requisições HTTP
 
-Inserção de curso via requisição HTTP
+Inserção de curso 
 ![img.png](img.png)
 Listagem de todos os cursos cadastrados
-![img_1.png](img_1.png)
+![img_3.png](img_3.png)
+Criar Aluno 
+![img_4.png](img_4.png)
+Vincular aluno a curso
+![img_5.png](img_5.png)
 
 > As requisições foram realizadas utilizando o cliente HTTP **Postman**.
 
